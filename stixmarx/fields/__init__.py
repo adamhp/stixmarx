@@ -31,7 +31,7 @@ def _initialize_fields():
     utils._load_mixbox()
 
     user_path = os.path.join(os.path.expanduser("~"), ".stixmarx")
-    if os.path.isdir(user_path) is False:
+    if not os.path.isdir(user_path) and not os.path.exists(user_path):
         os.makedirs(user_path)
         LOG.debug("Created directory '%s'", user_path)
 
